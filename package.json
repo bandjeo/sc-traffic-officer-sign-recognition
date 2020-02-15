@@ -1,0 +1,25 @@
+{
+  "name": "sc-traffic-officer-sign-recognition",
+  "version": "1.0.0",
+  "description": "Aleksandar Nedaković SW-21/2016\r Branislav Anđelić SW-6/2016\r ## Definicija problema\r Prepoznavanje različitih naredbi koje saobraćajni policajac upućuje učesnicima u saobraćaju telesnim gestovima, sa video snimka, u realnom vremenu.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bandjeo/sc-traffic-officer-sign-recognition.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bandjeo/sc-traffic-officer-sign-recognition/issues"
+  },
+  "homepage": "https://github.com/bandjeo/sc-traffic-officer-sign-recognition#readme",
+  "dependencies": {
+    "@tensorflow-models/posenet": "^2.2.1",
+    "@tensorflow/tfjs": "^1.5.2",
+    "@tensorflow/tfjs-node-gpu": "^1.5.2",
+    "canvas": "^2.6.1"
+  }
+}
