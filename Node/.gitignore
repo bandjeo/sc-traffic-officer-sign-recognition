@@ -1,2 +1,4 @@
 node_modules
 .vscode
+./src/dataset/*/images
+*.png

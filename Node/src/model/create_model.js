@@ -1,18 +1,18 @@
-(async () => {
-    const tf = require('@tensorflow/tfjs-node-gpu');
 
-    // Build and compile model.
-    const model = tf.sequential();
-    model.add(tf.layers.dense({ units: 1, inputShape: [1] }));
-    model.compile({ optimizer: 'sgd', loss: 'meanSquaredError' });
+const tf = require('@tensorflow/tfjs-node-gpu');
 
-    // Generate some synthetic data for training.
-    const xs = tf.tensor2d([[1], [2], [3], [4]], [4, 1]);
-    const ys = tf.tensor2d([[1], [3], [5], [7]], [4, 1]);
 
-    // Train model with fit().
-    await model.fit(xs, ys, { epochs: 10 });
 
-    // Run inference with predict().
-    model.predict(tf.tensor2d([[5]], [1, 1])).print();
-})()
+
+
+
+
+
+
+const lstm = tf.layers.lstm({ units: 8, returnSequences: true });
+
+// Create an input with 10 time steps.
+const input = tf.input({ shape: [10, 20] });
+const output = lstm.apply(input);
+
+console.log(JSON.stringify(output.shape));
