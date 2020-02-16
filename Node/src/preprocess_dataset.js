@@ -12,7 +12,7 @@ const outputStride = 16;
 const flipHorizontal = false;
 const images_fps = 10;
 
-const directory = './dataset/2/'
+const directory = './dataset/4/'
 
 
 module.exports.load_images = async (images_path, labels_path) => {
