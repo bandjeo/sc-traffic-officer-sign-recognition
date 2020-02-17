@@ -12,7 +12,14 @@ dataset_for_test_location = "../Node/src/dataset/test/output.csv"
 def test_training_model(model):
     data = pd.read_csv(dataset_for_test_location, header=None)
     data_x, data_y = generate_data(data)
+    result = model.predict(data_x)
     print(model.evaluate(data_x, data_y))
+    print(result.shape)
+    print(data_x.shape)
+    for data_x_batch, data_y_batch, result_batch in zip(data_x[0], data_y[0], result[0]):
+        result_pose = poses_names[np.argmax(result_batch)]
+        actual_pose = poses_names[np.argmax(data_y_batch)]
+        print(f'actual: {actual_pose}  predicted: {result_pose}  scores: {[f"{pn}:{ps}" for pn, ps in zip(poses_names, result[0][0])]}')
 
 
 def test_model(model):
@@ -43,5 +50,5 @@ if __name__ == '__main__':
     model = create_model(forTraining=False)
     model.set_weights(model_training.get_weights())
 
-    test_model(model)
+ #   test_model(model)
     test_training_model(model_training)

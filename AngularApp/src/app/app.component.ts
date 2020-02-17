@@ -11,7 +11,7 @@ export class AppComponent {
 
   async ngOnInit() {
     try {
-      this.model = await tf.loadLayersModel('../convertedModels/model.json');
+      //  this.model = await tf.loadLayersModel('../convertedModels/model.json');
     }
     catch (e) {
       console.log(e);

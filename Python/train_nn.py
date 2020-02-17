@@ -45,6 +45,7 @@ def create_model(forTraining=True):
     model.add(Dropout(0.3))
     model.add(Dense(total_poses, activation="softmax"))
     model.compile(loss='categorical_crossentropy', optimizer='adam')
+    print(model.summary())
     return model
 
 
