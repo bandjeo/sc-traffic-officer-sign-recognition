@@ -9,6 +9,9 @@ from sklearn.preprocessing import OneHotEncoder
 import os
 from datetime import datetime
 
+dataset_location = "../Node/src/dataset/"
+saved_models_location = "savedModels/"
+
 num_features = 20
 num_frames_for_train = 300
 poses_names = ['BEZ_POZE', 'DIGNUTA_RUKA', 'ISPRUZENA_RUKA_1', 'ISPRUZENA_RUKA_2', 'ISPRUZENA_RUKA_3',
@@ -19,6 +22,7 @@ enc = OneHotEncoder(categories=poses_names)
 poses_dtype = pd.api.types.CategoricalDtype(categories=poses_names)
 
 current_date = datetime.today().strftime('%Y_%m_%d_%H_%M_%S')
+
 
 def create_model(forTraining=True):
     if forTraining == True:
@@ -48,17 +52,17 @@ def train_model(model, fileNum, epochs, trains_per_file):
     if (fileNum):
         train_on_file(model, fileNum, epochs, trains_per_file)
     else:
-        for name in os.listdir("../Node/src/dataset/"):
+        for name in os.listdir(dataset_location):
             if name.isdigit():
                 train_on_file(model, name, epochs, trains_per_file)
 
 
 def train_on_file(model, file_num, epochs, trains_per_file):
-    data = pd.read_csv(f"../Node/src/dataset/{file_num}/output.csv", header=None)
+    data = pd.read_csv(f"{dataset_location}{file_num}/output.csv", header=None)
     for i in range(trains_per_file):
         data_x, data_y = generate_data(data)
         model.fit(data_x, data_y, epochs=epochs)
-    model.save(f"savedModels/{current_date}---videonum_{file_num}.h5")
+    model.save(f"{saved_models_location}{current_date}---videonum_{file_num}.h5")
 
 
 def generate_starting_frame(poses):
@@ -94,13 +98,13 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     if(args.model):
-        modelTraining = load_model(args.model)
+        model_training = load_model(args.model)
     else:
-        modelTraining = create_model()
+        model_training = create_model()
 
     while True:
         current_date = datetime.today().strftime('%Y_%m_%d_%H_%M_%S')
-        train_model(modelTraining, args.fileNum, args.epochs, args.trains_per_file)
+        train_model(model_training, args.fileNum, args.epochs, args.trains_per_file)
         if not args.repeat:
             break
 
