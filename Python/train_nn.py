@@ -40,7 +40,15 @@ def create_model(forTraining=True):
                    batch_input_shape=(batchSize, num_frames, num_features),
                    return_sequences=True,
                    stateful=stateful))
-    model.add(Dropout(0.2))
+    model.add(Dropout(0.3))
+    model.add(LSTM(32,
+                   return_sequences=True,
+                   stateful=stateful))
+    model.add(Dropout(0.3))
+    model.add(LSTM(32,
+                   return_sequences=True,
+                   stateful=stateful))
+    model.add(Dropout(0.3))
     model.add(Dense(256))
     model.add(Dropout(0.3))
     model.add(Dense(total_poses, activation="softmax"))
@@ -62,15 +70,16 @@ def train_on_file(model, file_num, epochs, trains_per_file):
     data = pd.read_csv(f"{dataset_location}{file_num}/output.csv", header=None)
     for i in range(trains_per_file):
         data_x, data_y = generate_data(data)
-        model.fit(data_x, data_y, epochs=epochs)
+        model.fit(data_x, data_y, epochs=epochs, verbose=0)
+        print(f'File: {file_num} Train: {i+1}/{trains_per_file}')
     model.save(f"{saved_models_location}{current_date}---videonum_{file_num}.h5")
 
 
 def generate_starting_frame(poses):
     while True:
         frame_index = random.randrange(len(poses) - num_frames_for_train)
-        if poses[frame_index] == 'BEZ_POZE':
-            return frame_index
+       # if poses[frame_index] == 'BEZ_POZE':
+        return frame_index
 
 
 def generate_data(data):
