@@ -15,7 +15,7 @@ if __name__ == '__main__':
                         help="model to be converted")
     parser.add_argument("-nt", "--not-for-training", action="store_true",
                         help="model is for training")
-    parser.add_argument("-o", "--output", default='../AngularApp/src/convertedModels/',
+    parser.add_argument("-o", "--output", default='../AngularApp/src/assets/',
                         help="output dir")
     args = parser.parse_args()
 
