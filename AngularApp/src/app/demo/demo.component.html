@@ -1,0 +1,91 @@
+<div class="container">
+    <table>
+        <tr>
+            <td>
+              <p>FPS: {{fps}}</p>
+              <div class="webcam-container">
+                <webcam [height]="500" [width]="500" [trigger]="triggerObservable" (imageCapture)="handleImage($event)"
+                        *ngIf="showWebcam" [captureImageData]="true" mirrorImage="never"></webcam>
+              </div>
+              <button (click)="toggleWebcam();">Toggle Webcam</button>
+              <button (click)="triggerSnapshot();">Start</button>
+              <button (click)="resetLSTMState()">Reset LSTM</button>
+              <br>
+              <span>
+              <p>image scale factor</p>
+              <select [(ngModel)]="imageScaleFactor">
+                <option>0.5</option>
+                <option>0.75</option>
+                <option>1</option>
+              </select></span>
+              <br>
+              <span>
+              <p>output stride</p>
+              <select [(ngModel)]="outputStride">
+                <option>8</option>
+                <option>16</option>
+                <option>32</option>
+              </select>
+
+              </span>
+            </td>
+            <td>
+              <table>
+                <tr>
+                  <td>POZE</td>
+                  <td>VALUE</td>
+                </tr>
+                <tr>
+                  <td>BEZ_POZE</td>
+                  <td>{{predictions[0] * 100 | number:"1.7-7"}}%</td>
+                </tr>
+                <tr>
+                  <td>DIGNUTA_RUKA</td>
+                  <td>{{predictions[1] * 100 | number:"1.7-7"}}%</td>
+                </tr>
+                <tr>
+                  <td>ISPRUZENA_RUKA_1</td>
+                  <td>{{predictions[2] * 100 | number:"1.7-7"}}%</td>
+                </tr>
+                <tr>
+                  <td>ISPRUZENA_RUKA_2</td>
+                  <td>{{predictions[3] * 100 | number:"1.7-7"}}%</td>
+                </tr>
+                <tr>
+                  <td>ISPRUZENA_RUKA_3</td>
+                  <td>{{predictions[4] * 100 | number:"1.7-7"}}%</td>
+                </tr>
+                <tr>
+                  <td>ISPRUZENA_RUKA_4</td>
+                  <td>{{predictions[5] * 100 | number:"1.7-7"}}%</td>
+                </tr>
+                <tr>
+                  <td>POVECAJ_BRZINU</td>
+                  <td>{{predictions[6] * 100 | number:"1.7-7"}}%</td>
+                </tr>
+                <tr>
+                  <td>PRIDJI_BLIZE</td>
+                  <td>{{predictions[7] * 100 | number:"1.7-7"}}%</td>
+                </tr>
+                <tr>
+                  <td>SMANJI_BRZINU</td>
+                  <td>{{predictions[8] * 100 | number:"1.7-7"}}%</td>
+                </tr>
+                <tr>
+                  <td>STAJACA_POZA_1</td>
+                  <td>{{predictions[9] * 100 | number:"1.7-7"}}%</td>
+                </tr>
+                <tr>
+                  <td>STAJACA_POZA_2</td>
+                  <td>{{predictions[10] * 100 | number:"1.7-7"}}%</td>
+                </tr>
+                <tr>
+                  <td>ZAUSTAVI_VOZILO</td>
+                  <td>{{predictions[11] * 100 | number:"1.7-7"}}%</td>
+                </tr>
+              </table>
+              <h1>{{predictedPose}}</h1>
+            </td>
+        </tr>
+    </table>
+</div>
