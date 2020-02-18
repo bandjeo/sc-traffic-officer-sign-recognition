@@ -117,13 +117,3 @@ if __name__ == '__main__':
         train_model(model_training, args.fileNum, args.epochs, args.trains_per_file)
         if not args.repeat:
             break
-
-    # model = create_model(forTraining=False)
-    # model.set_weights(modelTraining.get_weights())
-    #
-    # input_data = np.array([[[1.5432778569374546, 3.3566978985154705, 1.531237434425409, 2.79668232822279,
-    #                          1.8373025805784233, 4.703939818764676, 1.7300926787229247, 4.420871060268425,
-    #                          0.3922375791715402, 5.548539375350494, 1.1933219208086734, 1.5245880391283286,
-    #                          2.315286220828475, 3.1997542796955187, 2.2485330447399123, 3.1260978426601183,
-    #                          2.0885611042132655, 3.216404724659048, 2.294673770319466, 3.276863369076928]]])
-    # print(model.predict(input_data))
