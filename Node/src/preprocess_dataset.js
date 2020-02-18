@@ -120,7 +120,9 @@ const calculate_unit = (keypoints) => {
         return shoulder_position.y - keypoints[1].position.y;
     }else if (keypoints[2].score > SCORE_TRESHOLD) {
         return shoulder_position.y - keypoints[2].position.y;
-    } else return shoulder_position.y - keypoints[0].position.y;
+    } else {
+        return (shoulder_position.y - keypoints[10].position.y) * 2;
+    } 
 }
 
 // 0 nose
