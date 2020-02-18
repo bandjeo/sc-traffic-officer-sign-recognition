@@ -6,13 +6,13 @@ Prepoznavanje različitih naredbi koje saobraćajni policajac upućuje učesnici
 
 Gestovi se mogu naći [ovde](https://www.autoskolapavlin.com/tag/naredbe-policajca-u-raskrsnici/).
 ## Skup podataka
-Skup podataka predstavljaju snimci osoba koje pokazuju saobraćajne naredbe u različitim okruženjima. Snimci su anotirani oznakama za određeni gest u određenom vremenskom rasponu. Ovaj skup podataka potrebno je samostalno kreirati.
+Skup podataka predstavljaju snimci osoba koje pokazuju saobraćajne naredbe u različitim okruženjima. Snimci su anotirani oznakama za određeni gest u određenom vremenskom rasponu. Sastoji se iz oko 25min snimaka podeljenih na trening i test skup.
 ## Metodologija
 Metoda za rešavanje ovog problema se deli na dva dela.
 
-Prvi deo je prepoznavanje poze (ili skeleta) osobe na snimku. Za ovaj deo biće korišćeno gotovo rešenje. Primer gotovog rešenja može se naći [ovde](https://www.tensorflow.org/lite/models/pose_estimation/overview).
+Prvi deo je prepoznavanje poze (ili skeleta) osobe na snimku. Za ovaj deo biće korišćena je unapred trenirana [PoseNet](https://www.tensorflow.org/lite/models/pose_estimation/overview) konvoluciona neuronska mreža.
 
-Drugi deo je prepoznavanje različitih naredbi na osnovu skeleta dobijenog iz prethodnog dela. Izlaz iz prethodnog dela se pretvara u skup vektora koji simuliraju kosti tela, ruku i nogu osobe na snimku, i predstavljaju _feature_-e za LSTM neuronsku mrežu. Zadatak mreže je da kategoriše gestove u saobraćajne naredbe (ili odsustvo istih).
+Drugi deo je prepoznavanje različitih naredbi na osnovu skeleta dobijenog iz prethodnog dela. Izlaz iz prethodnog dela se pretvara u skup vektora koji simuliraju kosti tela, ruku i nogu osobe na snimku, iz kojih se izvlači _feature_ vektor na osnovu relativne dužine ektremiteta i njihovog ugla u ondnosu na vertikalnu osu. Ovaj vektor predstavlja ulaz za LSTM neuronsku mrežu. Zadatak mreže je da kategoriše gestove u saobraćajne naredbe (ili odsustvo istih). Isprobane su različite arhitekture LSTM mreže.
 
 Primer rešenja za kineske naredbe može se naći [ovde](https://github.com/zc402/ChineseTrafficPolicePose)
 ## Evaluacija
