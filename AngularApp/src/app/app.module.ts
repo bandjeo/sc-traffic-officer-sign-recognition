@@ -4,17 +4,21 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { WebcamModule } from 'ngx-webcam';
+import { DemoComponent } from './demo/demo.component';
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DemoComponent
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    WebcamModule
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        WebcamModule,
+        FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
