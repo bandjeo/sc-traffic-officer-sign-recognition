@@ -12,7 +12,7 @@ from datetime import datetime
 dataset_location = "../Node/src/dataset/"
 saved_models_location = "savedModels/"
 
-num_frames_for_train = 500
+num_frames_for_train = 900
 num_features = 20
 poses_names = ['BEZ_POZE', 'DIGNUTA_RUKA', 'ISPRUZENA_RUKA_1', 'ISPRUZENA_RUKA_2', 'ISPRUZENA_RUKA_3',
                'ISPRUZENA_RUKA_4', 'POVECAJ_BRZINU', 'PRIDJI_BLIZE', 'SMANJI_BRZINU', 'STAJACA_POZA_1',
