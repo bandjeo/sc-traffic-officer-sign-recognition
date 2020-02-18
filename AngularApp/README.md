@@ -1,5 +1,5 @@
 # Angular Demo Aplikacija
-- aplikacija za demonstriranje prepoznavanje poza u realnom vremenu
+- Aplikacija za demonstriranje prepoznavanje poza u realnom vremenu putem veb kamere. Snimak sa veb kamere se propušta kroz [PoseNet](https://www.tensorflow.org/lite/models/pose_estimation/overview), a zatim kroz istreniranu LSTM mrežu i rezultat predikcije se prikazuje na ekranu.
 
 ## Preduslovi
 - Node.js
