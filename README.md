@@ -27,12 +27,12 @@ Pre treniranja, snimci su procesirani tako što su pretvoreni u kolekciju slika 
 Treniranje LSTM mreže rađeno je nad izlaznim _.csv_ datotekama iz prethodnog koraka. Isečci od nasumično odabranih uzastopnih _N_ frejmova  predstavljaju _batch_ podataka nad kojima se vrši treniranje mreže kroz zadati broj epoha.
 
 Trenirane su različite arhitekture neuronske mreže:
-    - jedan LSTM sloj sa 32 jedinice, N = 300
-    - jedan LSTM sloj sa 32 jedinice i jedan _dense_ sloj sa 256 jedinica, N = 300
-    - jedan LSTM sloj sa 256 jedinica, N = 300
-    - jedan LSTM sloj sa 256 jedinica, N = 900
-    - jedan LSTM sloj sa 128 jedinica i jedan LSTM sloj sa 64 jedinice, N = 900
-    - dva LSTM sloja sa 128 jedinica i jedan LSTM sloj sa 64 jedinice, N = 900
+- jedan LSTM sloj sa 32 jedinice, N = 300
+- jedan LSTM sloj sa 32 jedinice i jedan _dense_ sloj sa 256 jedinica, N = 300
+- jedan LSTM sloj sa 256 jedinica, N = 300
+- jedan LSTM sloj sa 256 jedinica, N = 900
+- jedan LSTM sloj sa 128 jedinica i jedan LSTM sloj sa 64 jedinice, N = 900
+- dva LSTM sloja sa 128 jedinica i jedan LSTM sloj sa 64 jedinice, N = 900
 
 ## Evaluacija
 Skup podataka podeljen je na trening i test podskupove. Test skup korišćen je za evaluaciju rešenja.
@@ -42,9 +42,10 @@ Pošto su nam podjednako značajne i preciznost (ne želimo da se saobraćajna n
 Evaluacije različitih arhitektura se mogu naći u u direktorijumu *Evaluations*.
 ## Rezultati
 Najbolje rezultate imala je arhitektura sa jednim LSTM slojem sa 256 jedinica trenirana nad isečcima snimaka dužine 90 sekundi (N = 900).
-    - Makro F-mera: 0.7308
-    - Mera tačnosti: 0.7589
-    - [Ostale vrednosti](https://github.com/bandjeo/sc-traffic-officer-sign-recognition/blob/master/Evaluations/LSTM256-900f.txt)
+
+- Makro F-mera: 0.7308
+- Mera tačnosti: 0.7589
+- [Ostale vrednosti](https://github.com/bandjeo/sc-traffic-officer-sign-recognition/blob/master/Evaluations/LSTM256-900f.txt)
 
 ## Zaključak
 Mreža teško ralikuje slične poze, dok poze sa jedinstvenim karakteristikama lako razaznaje. Ovo može biti posledica premalog skupa podataka. Takodje, za labeliranje skupa podataka nije korišćen alat koji omogućava preciznost na nivou frejma, što dovodi do nekonzistentnosti u skupu podataka.
