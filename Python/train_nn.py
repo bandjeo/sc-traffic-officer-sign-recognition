@@ -41,11 +41,11 @@ def create_model(forTraining=True):
                    return_sequences=True,
                    stateful=stateful))
     model.add(Dropout(0.3))
-    # model.add(LSTM(32,
+    # model.add(LSTM(128,
     #                return_sequences=True,
     #                stateful=stateful))
     # model.add(Dropout(0.3))
-    # model.add(LSTM(32,
+    # model.add(LSTM(64,
     #                return_sequences=True,
     #                stateful=stateful))
     # model.add(Dropout(0.3))
