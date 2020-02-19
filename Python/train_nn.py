@@ -12,8 +12,8 @@ from datetime import datetime
 dataset_location = "../Node/src/dataset/"
 saved_models_location = "savedModels/"
 
+num_frames_for_train = 900
 num_features = 20
-num_frames_for_train = 300
 poses_names = ['BEZ_POZE', 'DIGNUTA_RUKA', 'ISPRUZENA_RUKA_1', 'ISPRUZENA_RUKA_2', 'ISPRUZENA_RUKA_3',
                'ISPRUZENA_RUKA_4', 'POVECAJ_BRZINU', 'PRIDJI_BLIZE', 'SMANJI_BRZINU', 'STAJACA_POZA_1',
                'STAJACA_POZA_2', 'ZAUSTAVI_VOZILO']
@@ -36,24 +36,24 @@ def create_model(forTraining=True):
         stateful = True
 
     model = Sequential()
-    model.add(LSTM(32,
+    model.add(LSTM(256,
                    batch_input_shape=(batchSize, num_frames, num_features),
                    return_sequences=True,
                    stateful=stateful))
     model.add(Dropout(0.3))
-    model.add(LSTM(32,
-                   return_sequences=True,
-                   stateful=stateful))
-    model.add(Dropout(0.3))
-    model.add(LSTM(32,
-                   return_sequences=True,
-                   stateful=stateful))
-    model.add(Dropout(0.3))
-    model.add(Dense(256))
-    model.add(Dropout(0.3))
+    # model.add(LSTM(128,
+    #                return_sequences=True,
+    #                stateful=stateful))
+    # model.add(Dropout(0.3))
+    # model.add(LSTM(64,
+    #                return_sequences=True,
+    #                stateful=stateful))
+    # model.add(Dropout(0.3))
+    # model.add(Dense(256))
+    # model.add(Dropout(0.3))
     model.add(Dense(total_poses, activation="softmax"))
     model.compile(loss='categorical_crossentropy', optimizer='adam')
-    print(model.summary())
+    model.summary()
     return model
 
 

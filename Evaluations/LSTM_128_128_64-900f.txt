@@ -1,0 +1,51 @@
+                                                                                        CONFUSION MATRIX                                                                                        
+ACTUAL/PREDICTION   |  BEZ_POZE|DIGNUTA_RUKA|ISPRUZENA_RUKA_1|ISPRUZENA_RUKA_2|ISPRUZENA_RUKA_3|ISPRUZENA_RUKA_4| POVECAJ_BRZINU|PRIDJI_BLIZE|SMANJI_BRZINU|STAJACA_POZA_1|STAJACA_POZA_2|ZAUSTAVI_VOZILO
+BEZ_POZE            |       823|          11|               6|              11|               9|               0|             13|           4|           17|             3|            21|              4
+DIGNUTA_RUKA        |        36|         172|              25|               0|               0|               0|              0|           0|            0|             0|             0|              0
+ISPRUZENA_RUKA_1    |       102|           0|               0|               0|               0|               0|              0|           0|            0|             0|             0|              0
+ISPRUZENA_RUKA_2    |         0|           0|               0|              80|               0|               0|              0|           0|            0|             0|             0|              0
+ISPRUZENA_RUKA_3    |        82|           0|               0|               0|              73|               0|              0|           0|            0|             0|             0|              0
+ISPRUZENA_RUKA_4    |        21|           0|               0|               0|               0|              91|              0|           0|            0|             0|             3|              0
+POVECAJ_BRZINU      |         1|           0|               0|               0|               0|               0|            192|           0|            0|             0|             0|              0
+PRIDJI_BLIZE        |        45|          43|              58|               0|               0|               0|              0|          37|            0|             3|             0|              0
+SMANJI_BRZINU       |         1|           0|               0|               0|               0|               0|              0|           0|          211|             0|             0|              0
+STAJACA_POZA_1      |       137|           0|               0|               0|               0|               0|              0|           0|            0|            38|             0|              0
+STAJACA_POZA_2      |        50|           0|               0|               0|               0|               0|              0|           0|            0|             0|           147|              0
+ZAUSTAVI_VOZILO     |        36|          11|              20|               0|               0|               0|              0|           0|            0|             0|             0|             43
+
+
+                                                                                         AVERAGE VALUES                                                                                         
+ACTUAL/PREDICTION   |  BEZ_POZE|DIGNUTA_RUKA|ISPRUZENA_RUKA_1|ISPRUZENA_RUKA_2|ISPRUZENA_RUKA_3|ISPRUZENA_RUKA_4| POVECAJ_BRZINU|PRIDJI_BLIZE|SMANJI_BRZINU|STAJACA_POZA_1|STAJACA_POZA_2|ZAUSTAVI_VOZILO
+BEZ_POZE            |  88.2759%|     1.3963%|         0.6628%|         1.1586%|         0.9828%|         0.2802%|        1.4293%|     0.4583%|      2.1854%|       0.5645%|       2.2454%|        0.3606%
+DIGNUTA_RUKA        |  26.1546%|    64.1538%|         9.5718%|         0.0031%|         0.0013%|         0.0234%|        0.0013%|     0.0178%|      0.0469%|        0.011%|       0.0013%|        0.0136%
+ISPRUZENA_RUKA_1    |  96.0597%|     1.7296%|          1.918%|         0.0272%|         0.0035%|         0.0051%|        0.0007%|     0.0085%|      0.0094%|       0.0955%|       0.0007%|        0.1422%
+ISPRUZENA_RUKA_2    |    1.854%|     0.0002%|         0.0011%|        98.1391%|         0.0013%|         0.0015%|        0.0018%|     0.0001%|         0.0%|       0.0001%|       0.0004%|        0.0005%
+ISPRUZENA_RUKA_3    |  44.2404%|     0.0088%|         0.0183%|         0.0041%|        55.2535%|         0.3462%|        0.0087%|     0.0064%|      0.0525%|       0.0089%|       0.0382%|        0.0142%
+ISPRUZENA_RUKA_4    |  22.4805%|     0.2246%|         0.0051%|          0.094%|         0.0285%|         73.097%|         0.017%|     0.0242%|      0.0229%|       0.0077%|       3.9863%|        0.0123%
+POVECAJ_BRZINU      |   0.9014%|     0.0025%|         0.0001%|         0.0735%|         0.0063%|         0.0001%|       99.0116%|     0.0017%|      0.0012%|          0.0%|       0.0004%|        0.0012%
+PRIDJI_BLIZE        |  27.4251%|    20.3626%|        29.1562%|         0.0851%|         0.1256%|         0.3319%|        0.0808%|    19.4118%|      0.6172%|       2.0147%|       0.0315%|        0.3576%
+SMANJI_BRZINU       |   1.0445%|     0.0001%|         0.0001%|         0.0001%|         0.0002%|         0.0002%|        0.0002%|        0.0%|     98.9543%|       0.0002%|       0.0001%|        0.0001%
+STAJACA_POZA_1      |  75.1604%|     0.0027%|         0.0138%|         0.0013%|         0.0047%|         0.0008%|        0.0007%|     0.0031%|      0.0128%|      24.7921%|       0.0026%|        0.0049%
+STAJACA_POZA_2      |  27.7166%|     0.0166%|         0.0038%|         0.0746%|         0.0334%|         3.5872%|        0.0119%|      0.412%|      0.0167%|       0.0082%|      68.1026%|        0.0164%
+ZAUSTAVI_VOZILO     |  31.0762%|    10.6558%|        22.5141%|         0.0178%|         0.0194%|         0.0217%|        0.0186%|     0.4204%|      0.3986%|       0.1811%|       0.0229%|       34.6534%
+
+
+                                                                                          POSE RECALL                                                                                           
+  BEZ_POZE|DIGNUTA_RUKA|ISPRUZENA_RUKA_1|ISPRUZENA_RUKA_2|ISPRUZENA_RUKA_3|ISPRUZENA_RUKA_4| POVECAJ_BRZINU|PRIDJI_BLIZE|SMANJI_BRZINU|STAJACA_POZA_1|STAJACA_POZA_2|ZAUSTAVI_VOZILO
+    0.8926|      0.7382|             0.0|             1.0|           0.471|          0.7913|         0.9948|      0.1989|       0.9953|        0.2171|        0.7462|         0.3909
+
+
+                                                                                         POSE PRECISION                                                                                         
+  BEZ_POZE|DIGNUTA_RUKA|ISPRUZENA_RUKA_1|ISPRUZENA_RUKA_2|ISPRUZENA_RUKA_3|ISPRUZENA_RUKA_4| POVECAJ_BRZINU|PRIDJI_BLIZE|SMANJI_BRZINU|STAJACA_POZA_1|STAJACA_POZA_2|ZAUSTAVI_VOZILO
+    0.6169|      0.7257|             0.0|          0.8791|          0.8902|             1.0|         0.9366|      0.9024|       0.9254|        0.8636|        0.8596|         0.9149
+
+
+                                                                                          POSE F-VALUE                                                                                          
+  BEZ_POZE|DIGNUTA_RUKA|ISPRUZENA_RUKA_1|ISPRUZENA_RUKA_2|ISPRUZENA_RUKA_3|ISPRUZENA_RUKA_4| POVECAJ_BRZINU|PRIDJI_BLIZE|SMANJI_BRZINU|STAJACA_POZA_1|STAJACA_POZA_2|ZAUSTAVI_VOZILO
+    0.7296|      0.7319|             0.0|          0.9357|           0.616|          0.8835|         0.9648|       0.326|       0.9591|         0.347|        0.7989|         0.5478
+
+
+                                                                                MACRO F-VALUE:0.6533623470772507                                                                                
+
+
+                                                                                 ERROR RATE:0.7115671641791045                                                                                  
