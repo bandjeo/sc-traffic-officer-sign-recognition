@@ -1,6 +1,6 @@
 ## Tim
-Aleksandar Nedaković SW-21/2016
-Branislav Anđelić SW-6/2016
+- Aleksandar Nedaković SW-21/2016
+- Branislav Anđelić SW-6/2016
 
 ## Pokretanje
 - Predprocesiranje: [Node](https://github.com/bandjeo/sc-traffic-officer-sign-recognition/tree/master/Node)
